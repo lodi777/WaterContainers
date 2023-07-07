@@ -26,6 +26,30 @@ public class Container {
         return new Container(name, maxCapacity, waterLevel);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(double maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    public double getWaterLevel() {
+        return waterLevel;
+    }
+
+    public void setWaterLevel(double waterLevel) {
+        this.waterLevel = waterLevel;
+    }
+
     @Override
     public String toString() {
         return "Container{" +
