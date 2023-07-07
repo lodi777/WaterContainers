@@ -25,4 +25,13 @@ public class Container {
         }
         return new Container(name, maxCapacity, waterLevel);
     }
+
+    @Override
+    public String toString() {
+        return "Container{" +
+                "name='" + name + '\'' +
+                ", maxCapacity=" + maxCapacity +
+                ", waterLevel=" + waterLevel +
+                '}';
+    }
 }
