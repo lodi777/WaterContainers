@@ -28,6 +28,27 @@ public class Container {
         return new Container(name, maxCapacity, waterLevel);
     }
 
+    public void addWater(double value) {
+        if (addingWaterIsPossible(value)) {
+            waterLevel = waterLevel + value;
+        } else {
+            System.out.println("Niemożna dolać wody, za mało miejsca w zbiorniku.");
+        }
+    }
+    private boolean addingWaterIsPossible(double value) {
+        return waterLevel + value <= maxCapacity;
+    }
+    public void drainWater(double value) {
+        if (drainingWaterIsPossible(value)) {
+            waterLevel = waterLevel - value;
+        } else {
+            System.out.println("Niemożna odlać wody, probujesz odlac za dużo.");
+        }
+    }
+    private boolean drainingWaterIsPossible(double value) {
+        return waterLevel - value >= 0;
+    }
+
     public String getName() {
         return name;
     }
