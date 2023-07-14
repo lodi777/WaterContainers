@@ -1,5 +1,7 @@
 package pl.kurs.models;
 
+import java.util.Objects;
+
 public class Container {
 
     private String name;
@@ -51,6 +53,19 @@ public class Container {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Container container = (Container) o;
+        return Double.compare(container.maxCapacity, maxCapacity) == 0 && Double.compare(container.waterLevel, waterLevel) == 0 && Objects.equals(name, container.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, maxCapacity, waterLevel);
+    }
+
+    @Override
     public String toString() {
         return "Container{" +
                 "name='" + name + '\'' +
@@ -58,4 +73,5 @@ public class Container {
                 ", waterLevel=" + waterLevel +
                 '}';
     }
+
 }
