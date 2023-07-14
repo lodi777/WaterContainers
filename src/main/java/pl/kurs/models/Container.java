@@ -48,6 +48,14 @@ public class Container {
     private boolean drainingWaterIsPossible(double value) {
         return waterLevel - value >= 0;
     }
+    public void pourWater(Container source, double value) {
+        if (source.drainingWaterIsPossible(value) && this.addingWaterIsPossible(value)) {
+            source.drainWater(value);
+            this.addWater(value);
+        } else {
+            System.out.println("Nie udało się przelać wody.");
+        }
+    }
 
     public String getName() {
         return name;
