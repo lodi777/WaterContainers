@@ -17,5 +17,18 @@ public class WaterContainerService {
         return highestContainer;
     }
 
+    public static Container findContainerWithHighestFilled(Container[] containers) {
+        Container containerHighestFilled = null;
+        double maxFilled = 0;
+
+        for (Container container : containers) {
+            double fill = container.getWaterLevel() / container.getMaxCapacity();
+            if (fill > maxFilled) {
+                maxFilled = fill;
+                containerHighestFilled = container;
+            }
+        }
+        return containerHighestFilled;
+    }
 
 }
