@@ -31,4 +31,23 @@ public class WaterContainerService {
         return containerHighestFilled;
     }
 
+    public static Container[] findEmptyContainers(Container[] containers) {
+        int valueEmptyContainers = 0;
+
+        for (Container container : containers) {
+            if (container.getWaterLevel() == 0) {
+                valueEmptyContainers++;
+            }
+        }
+        Container[] emptyContainers = new Container[valueEmptyContainers];
+        int index = 0;
+
+        for (Container container : containers) {
+            if (container.getWaterLevel() == 0) {
+                emptyContainers[index++] = container;
+            }
+        }
+        return emptyContainers;
+    }
+
 }
